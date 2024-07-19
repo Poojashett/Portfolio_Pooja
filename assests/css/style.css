@@ -121,13 +121,16 @@ button {
   text-align: left;
   cursor: pointer;
 }
-.github-btn{
-   font: inherit;
-  background: none;
+.github-btn {
+  font: inherit;
+  background: rgb(53, 53, 53);
   border: none;
   text-align: left;
   cursor: pointer;
   color: white;
+  padding: 0px 7px;
+  border-radius: 6px;
+  width: fit-content;
 }
 
 input,
@@ -328,7 +331,7 @@ main {
 }
 
 .avatar-box {
-  background: var(--bg-gradient-onyx);
+  /* background: var(--bg-gradient-onyx); */
   border-radius: 20px;
 }
 
@@ -1068,7 +1071,12 @@ main {
 .project-category {
   margin-left: 10px;
 }
-
+.project-technology {
+  color: var(--light-gray-70);
+  font-weight: var(--fw-300);
+  font-size: 13px;
+  margin-left: 10px;
+}
 .project-title {
   color: var(--white-2);
   font-size: var(--fs-5);
@@ -1327,6 +1335,10 @@ textarea.form-input::-webkit-resizer {
   .blog-banner-box {
     height: auto;
   }
+
+  .avatar-box img {
+    border-radius: 50%;
+  }
 }
 
 /**
@@ -1412,6 +1424,7 @@ textarea.form-input::-webkit-resizer {
 
   .avatar-box img {
     width: 120px;
+    border-radius: 50%;
   }
 
   .info-content .name {
@@ -1674,6 +1687,9 @@ textarea.form-input::-webkit-resizer {
   .has-scrollbar::-webkit-scrollbar-button {
     width: 100px;
   }
+  .avatar-box img {
+    border-radius: 50%;
+  }
 
   /**
    * SIDEBAR
@@ -1799,7 +1815,9 @@ textarea.form-input::-webkit-resizer {
   main {
     margin-bottom: 60px;
   }
-
+  .avatar-box img {
+    border-radius: 50%;
+  }
   .main-content {
     position: relative;
     width: max-content;
@@ -1887,7 +1905,9 @@ textarea.form-input::-webkit-resizer {
   body::-webkit-scrollbar {
     width: 20px;
   }
-
+  .avatar-box img {
+    border-radius: 50%;
+  }
   body::-webkit-scrollbar-track {
     background: var(--smoky-black);
   }

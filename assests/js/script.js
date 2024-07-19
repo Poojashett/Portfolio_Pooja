@@ -115,24 +115,53 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 
 
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
+// // contact form variables
+// const form = document.querySelector("[data-form]");
+// const formInputs = document.querySelectorAll("[data-form-input]");
+// const formBtn = document.querySelector("[data-form-btn]");
 
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
+// // add event to all form input field
+// for (let i = 0; i < formInputs.length; i++) {
+//   formInputs[i].addEventListener("input", function () {
 
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
+//     // check form validation
+//     if (form.checkValidity()) {
+//       formBtn.removeAttribute("disabled");
+//     } else {
+//       formBtn.setAttribute("disabled", "");
+//     }
 
+//   });
+// }
+
+ const form = document.querySelector("[data-form]");
+  const formInputs = document.querySelectorAll("[data-form-input]");
+  const formBtn = document.querySelector("[data-form-btn]");
+
+  // add event to all form input field
+  for (let i = 0; i < formInputs.length; i++) {
+    formInputs[i].addEventListener("input", function () {
+      // check form validation
+      if (form.checkValidity()) {
+        formBtn.removeAttribute("disabled");
+      } else {
+        formBtn.setAttribute("disabled", "");
+      }
+    });
+  }
+
+  // sendMail functionality
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting in the default way
+
+    const fullname = form.querySelector('input[name="fullname"]').value;
+    const email = form.querySelector('input[name="email"]').value;
+    const message = form.querySelector('textarea[name="message"]').value;
+
+    const mailtoLink = `mailto:your-email@example.com?subject=Contact Form Submission&body=Name: ${fullname}%0AEmail: ${email}%0AMessage: ${message}`;
+
+    window.location.href = mailtoLink;
   });
-}
 
 
 
